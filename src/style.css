@@ -74,7 +74,7 @@
 }
 
 .card-container:hover{
-     transition: all ease-in-out .1s;
+     transition: all ease-in-out .3s;
      transform: translateY(6px);
 }
 
