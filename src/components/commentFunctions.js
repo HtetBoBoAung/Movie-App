@@ -3,11 +3,13 @@ const getAppId = "UT0vpKlsx8hbbbeuzzTd";
 async function CommentPostRequest(id, name, text) {
      try {
        const response = await axios.post(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${getAppId}/comments/`, {
-         item_id: id,
+        item_id: id,
          username: name,
          comment: text,
        });
-       console.log(response);
+       localStorage.setItem(response,"response");
+       return response;
+      
       
      } catch (e) {
        console.error(e);

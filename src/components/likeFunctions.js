@@ -1,3 +1,5 @@
+const getAppId = "UT0vpKlsx8hbbbeuzzTd";
+
 async function postRequest(id) {
      try {
        const postresult = await axios.post(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${getAppId}/likes/`, {

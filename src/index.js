@@ -2,6 +2,7 @@ import "./style.css";
 import { getData } from './components/apidata';
 import { CommentPostRequest, commentGetRequest } from './components/commentFunctions';
 import {postRequest, getRequest} from './components/likeFunctions';
+import { reservationGetRequest, reservationPostRequest } from "./components/reservation";
 
 const container = document.querySelector(".container");
 const commentContainer = document.querySelector(".comment-wrapper");
@@ -35,18 +36,16 @@ async function displayFunction() {
               <i class="fa-solid fa-heart" data-set=${item.id}></i>
               <p class="like-number">0</p>
             </li>
-
-            <button class="reservation-btn">Reservation</button>
           </ul>
         </div>`;
       container.append(cardList);
+
 
     // comment section
     const displayBtn = cardList.querySelector(".comment-box");
     displayBtn.addEventListener("click", (e) => {
     let index = e.target.dataset.index;
     const selectedItem = data[index];
-    console.log(selectedItem.id);
     commentContainer.classList.add("display");
     const popUpcard = document.createElement("div");
     popUpcard.classList = "comment-popup";
@@ -78,6 +77,7 @@ async function displayFunction() {
     </div>
     <button class="close-btn">X</button>`;
     commentContainer.append(popUpcard);
+    displayComment(1);
 
     const usernames = document.querySelector(".inputname");
     const userComments = document.querySelector(".comment");
@@ -106,7 +106,7 @@ async function displayFunction() {
         console.error(error);
       }
     }
-      displayComment(selectedItem);
+
         
 submitBtn.addEventListener("click", async (e) => {
     let id = e.target.dataset.set;
@@ -114,7 +114,7 @@ submitBtn.addEventListener("click", async (e) => {
     let comment = userComments.value;
     console.log(id, name, comment);
     const response = await CommentPostRequest(id, name, comment);
-    localStorage.setItem("response", JSON.stringify(response));
+    localStorage.setItem("post request", JSON.stringify(response));
     const userCommentDiv = document.querySelector(".userComment-div");
 })
   });

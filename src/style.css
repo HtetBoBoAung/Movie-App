@@ -25,6 +25,8 @@
      background-color: #161A30;
      background: url(image//space.jpg) no-repeat center;
      background-size: cover;
+     position: relative;
+     z-index: 1;
 }
 
 .nav-title {
@@ -69,7 +71,7 @@
      display: flex;
      flex-direction: column;
      width: 280px;
-     height: 520px;
+     height: 500px;
      border-radius: 20px;
      background-color: #161A30;
      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -352,4 +354,31 @@ li {
      flex-direction: column;
      gap: 1rem;
      padding: .5rem;
+}
+
+.reservation-content {
+     display: block;
+     justify-content: center;
+     align-items: center;
+     width: 60%;
+     height: 500px;
+     position: absolute;
+     top: 15%;
+     left: 20%;
+     z-index: 2;
+     background-color: #000;
+}
+
+.reservation-popup {
+     display: flex;
+     flex-direction: column;
+     width: 60%;
+     height: 500px;
+     gap: 1rem;
+     padding: 1rem;
+}
+
+.reservation-title {
+     font-size: 1.5rem;
+     font-weight: 600;
 }
