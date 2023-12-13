@@ -1,14 +1,15 @@
 const getAppId = "UT0vpKlsx8hbbbeuzzTd";
+const nameValue = document.querySelector(".inputname");
+const commentValue = document.querySelector(".comment-reservation");
+const btn = document.querySelector(".reservation-btn");
 
-async function reservationPostRequest(id, name, dstart, dend) {
+async function reservationPostRequest(name,comment) {
      try{
-          const response = await axios.post(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${getAppId}/reservations/`, {
-               item_id: id,
+          const postResponse = await axios.post(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${getAppId}/reservations/`, {
                username: name,
-               date_start: dstart,
-               date_end: dend
+               userComment: comment
            });
-          console.log(response);
+          console.log(postResponse);
      }catch(error){
           console.error(error);
      }
@@ -23,4 +24,20 @@ async function reservationGetRequest() {
      }
 }
 
-export {reservationGetRequest, reservationPostRequest};
+async function showReservation() {
+     const name = nameValue.value;
+     const comment = commentValue.value;
+   
+     try {
+       const postResponse = await reservationPostRequest(name, comment);
+       localStorage.setItem("postResponse", postResponse);
+       const response = await reservationGetRequest();
+       console.log(response);
+     } catch (err) {
+       console.error(err);
+     }
+   }
+
+btn.addEventListener("click", showReservation);
+
+//export {reservationGetRequest, reservationPostRequest};
