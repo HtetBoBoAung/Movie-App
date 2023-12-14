@@ -1,7 +1,4 @@
 const getAppId = "UT0vpKlsx8hbbbeuzzTd";
-const nameValue = document.querySelector(".inputname");
-const commentValue = document.querySelector(".comment-reservation");
-const btn = document.querySelector(".reservation-btn");
 
 async function reservationPostRequest(name,comment) {
      try{
@@ -24,20 +21,4 @@ async function reservationGetRequest() {
      }
 }
 
-async function showReservation() {
-     const name = nameValue.value;
-     const comment = commentValue.value;
-   
-     try {
-       const postResponse = await reservationPostRequest(name, comment);
-       localStorage.setItem("postResponse", postResponse);
-       const response = await reservationGetRequest();
-       console.log(response);
-     } catch (err) {
-       console.error(err);
-     }
-   }
-
-btn.addEventListener("click", showReservation);
-
-//export {reservationGetRequest, reservationPostRequest};
+export {reservationGetRequest, reservationPostRequest};

@@ -71,7 +71,7 @@ body {
      display: flex;
      flex-direction: column;
      width: 280px;
-     height: 500px;
+     height: 550px;
      border-radius: 20px;
      background-color: #161A30;
      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -145,12 +145,13 @@ body {
 }
 
 .reservation-btn {
-     font-size: 1.3rem;
+     width: 200px;
+     font-size: 1.2rem;
      font-weight: 500;
-     padding: .5rem 1.2rem;
+     padding: .5rem;
      border-radius: 7px;
      border: none;
-     margin-left: 3.25rem;
+     margin-left: 1.8rem;
      color: #fff;
      background-color: #11009E;
      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -159,7 +160,7 @@ body {
 .reservation-btn:hover {
      cursor: pointer;
      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-     box-shadow: 0 2px #11009E;
+     box-shadow: 0 2px #666;
      transition: all ease-in-out .2s;
      transform: translateY(1px);
 }

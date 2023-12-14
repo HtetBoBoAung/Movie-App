@@ -12,6 +12,7 @@ const comPopUp = document.querySelector(".comment-popup");
 async function displayFunction() {
   try {
     const data = await getData();
+    console.log(data);
     data.forEach((item, index) => {
       let { name, image, genres } = item;
       const cardList = document.createElement("article");
@@ -37,6 +38,8 @@ async function displayFunction() {
               <p class="like-number">0</p>
             </li>
           </ul>
+
+          <button class="reservation-btn">Add Reservation</button>
         </div>`;
       container.append(cardList);
 
