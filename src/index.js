@@ -80,7 +80,7 @@ async function displayFunction() {
     </div>
     <button class="close-btn">X</button>`;
     commentContainer.append(popUpcard);
-    displayComment(1);
+    displayComment(selectedItem);
 
     const usernames = document.querySelector(".inputname");
     const userComments = document.querySelector(".comment");
